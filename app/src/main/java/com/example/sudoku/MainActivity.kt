@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.view.View
+import android.view.Menu;
+import android.view.MenuInflater;
+
 class MainActivity : AppCompatActivity() {
 
     //Кнопки
@@ -34,5 +37,10 @@ class MainActivity : AppCompatActivity() {
     public fun onClickButton(view: View){
         val aboutIntent = Intent(this, About::class.java)
         startActivity(aboutIntent)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.context_menu, menu)
+        return true
     }
 }
