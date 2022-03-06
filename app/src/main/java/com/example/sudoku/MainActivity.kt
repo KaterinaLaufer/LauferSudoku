@@ -25,8 +25,9 @@ class MainActivity : AppCompatActivity() {
         exitButton = findViewById(R.id.exit_button)
 
         aboutButton.setOnClickListener() { view ->
-            val aboutIntent = Intent(this, About::class.java)
-            startActivity(aboutIntent)
+            onClickButton(view)
+            //val aboutIntent = Intent(this, About::class.java)
+            //startActivity(aboutIntent)
         }
     }
 
