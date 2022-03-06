@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sudoku</string>
+    <string name="main_title">Laufer Sudoku</string>
+    <string name="continue_label">Продолжить</string>
+    <string name="new_game_label">Новая игра</string>
+    <string name="about_label">О программе</string>
+    <string name="exit_label">Выход</string>
+</resources>
