@@ -40,6 +40,9 @@ class MainActivity : AppCompatActivity() {
         newButton.setOnClickListener() { view ->
             onClickButton(view)
         }
+        exitButton.setOnClickListener() { view ->
+            onClickButton(view)
+        }
     }
 
     fun onClickButton(view: View){
@@ -54,6 +57,9 @@ class MainActivity : AppCompatActivity() {
             }
             R.id.new_button->{
                 openNewGameDialog();
+            }
+            R.id.exit_button->{
+                finish()
             }
         }
     }
