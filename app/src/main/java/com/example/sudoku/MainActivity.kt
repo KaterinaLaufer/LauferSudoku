@@ -8,6 +8,10 @@ import android.view.View
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem
+import android.app.AlertDialog
+import android.content.DialogInterface
+import android.os.Debug
+import android.util.Log
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,11 +37,43 @@ class MainActivity : AppCompatActivity() {
             //val aboutIntent = Intent(this, About::class.java)
             //startActivity(aboutIntent)
         }
+        newButton.setOnClickListener() { view ->
+            onClickButton(view)
+        }
+        exitButton.setOnClickListener() { view ->
+            onClickButton(view)
+        }
     }
 
-    public fun onClickButton(view: View){
-        val aboutIntent = Intent(this, About::class.java)
-        startActivity(aboutIntent)
+    fun onClickButton(view: View){
+       /* if(view.id==R.id.about_button){
+            val aboutIntent = Intent(this, About::class.java)
+            startActivity(aboutIntent)
+        }*/
+        when (view.id){
+             R.id.about_button -> {
+                val aboutIntent = Intent(this, About::class.java)
+                startActivity(aboutIntent)
+            }
+            R.id.new_button->{
+                openNewGameDialog();
+            }
+            R.id.exit_button->{
+                finish()
+            }
+        }
+    }
+
+    private fun openNewGameDialog() {
+        val alertDialogBuilder=AlertDialog.Builder(this)
+        alertDialogBuilder.setTitle(R.string.difficult_label)
+        alertDialogBuilder.setItems(R.array.difficulty, DialogInterface.OnClickListener {dialogInterface, i ->  startGame(i)})
+        alertDialogBuilder.show()
+        //alertDialogBuilder.create()
+    }
+
+    private fun startGame(i: Int) {
+        Log.d("Sudoku", "clicked on " +i)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
