@@ -21,7 +21,9 @@
             android:label="@string/about_title">
             // TODO Разобраться почему не работает стандартнаятема
             //android:theme="@android:style/Theme.Dialog"
-
+        </activity>
+        <activity android:name=".Pref"
+            android:label="@string/settings_label">
         </activity>
     </application>
 

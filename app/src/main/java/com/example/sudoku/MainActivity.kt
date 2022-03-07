@@ -7,6 +7,7 @@ import android.widget.Button
 import android.view.View
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,6 +42,14 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.context_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId==R.id.settings) {
+            val prefIntent = Intent(this, Pref::class.java)
+            startActivity(prefIntent)
+        }
         return true
     }
 }
